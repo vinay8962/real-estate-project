@@ -8,6 +8,7 @@ module.exports = {
         primary: "#06a788",
         subPrimary1: "rgba(215, 241, 236, 1)",
         subPrimary2: "rgba(6, 167, 136, 0.16)",
+        paragraph: "rgba(44, 46, 51, 0.6)",
         Text1: "#5c5e61",
         Text2: "#161e2d",
       },

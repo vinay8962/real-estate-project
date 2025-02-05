@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+// SVG Imports
 import { ReactComponent as ApartmentIcon } from "../assets/SVG/buildings-1-svgrepo-com.svg";
 import { ReactComponent as VillaIcon } from "../assets/SVG/villa-svgrepo-com.svg";
 import { ReactComponent as StudioIcon } from "../assets/SVG/buildings-modern-couple-svgrepo-com.svg";
@@ -26,18 +27,16 @@ const PropertyType = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-      },
+      transition: { staggerChildren: 0.3 },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 100 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.4, ease: "easeOut" },
+      transition: { duration: 0.1, ease: "easeOut" },
     },
   };
 
@@ -45,29 +44,26 @@ const PropertyType = () => {
     <div className="w-full bg-white py-20">
       <div className="text-center mb-10">
         <h1 className="text-5xl font-semibold mb-4">Property Types</h1>
-        <p className="text-gray-500">
+        <p className="text-gray-600">
           Thousands of luxury home enthusiasts just like you visit our website.
         </p>
       </div>
 
+      {/* Property Grid */}
       <motion.div
         className="grid gap-8 md:grid-cols-4 sm:grid-cols-2 grid-cols-1 mx-auto w-10/12"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
       >
         {propertyData.map((property, index) => (
           <motion.div
-            variants={itemVariants}
             key={index}
-            className="p-6 h-36 flex items-center rounded-2xl hover:shadow-xl transition-shadow group"
+            variants={itemVariants}
+            className="p-6 h-36 flex items-center rounded-2xl hover:shadow-xl transition-shadow group bg-white"
           >
             <div className="flex items-center justify-start w-full">
-              {/* Icon Section */}
               <property.Icon className="w-20 h-20 group-hover:bg-primary group-hover:text-white border border-gray-300 p-3 rounded-xl transition-all" />
-
-              {/* Text Section */}
               <div className="ml-4">
                 <h2 className="text-xl font-semibold group-hover:text-primary transition-colors">
                   {property.name}

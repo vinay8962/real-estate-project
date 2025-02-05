@@ -48,7 +48,7 @@ const HeroSection = () => {
               key={index}
               custom={index}
               initial="hidden"
-              animate="visible"
+              whileInView="visible"
               variants={letterAnimation}
               className="inline-block"
             >
@@ -64,7 +64,7 @@ const HeroSection = () => {
               key={index}
               custom={index}
               initial="hidden"
-              animate="visible"
+              whileInView="visible"
               variants={textAnimation}
               className="inline-block"
             >

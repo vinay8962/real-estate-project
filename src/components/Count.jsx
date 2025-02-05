@@ -29,7 +29,7 @@ const Count = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[600px]">
+    <div className="relative w-full md:h-[600px] h-auto">
       {/* Background Image with Fixed Position */}
       <div
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center bg-fixed"
