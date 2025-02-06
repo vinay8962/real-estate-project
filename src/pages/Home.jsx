@@ -8,6 +8,10 @@ import PopularSearch from "../components/PopularSearch";
 import TrustedSection from "../components/TrustedSection";
 import OpinionSection from "../components/OpinionSection";
 import Testimonials from "../components/Testimonials";
+import WorkTogetherSection from "../components/WorkTogetherSection";
+import NeighborhoodSection from "../components/NeighborhoodSection";
+import AppraisalSection from "../components/AppraisalSection";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -19,8 +23,12 @@ const Home = () => {
       <PopularSearch />
       <Count />
       <LocalAgent />
+      <NeighborhoodSection />
       <Testimonials />
+      <AppraisalSection />
+      <WorkTogetherSection />
       <OpinionSection />
+      <Footer />
     </div>
   );
 };
