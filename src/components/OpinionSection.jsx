@@ -32,7 +32,7 @@ const blogs = [
 
 const OpinionSection = () => {
   return (
-    <div className="w-full px-6 py-10 md:px-12 md:py-12">
+    <div className="w-full px-6 py-10 md:px-12 md:py-12 overflow-hidden">
       {/* Section Header */}
       <div className="text-center mb-10">
         <h1 className="text-5xl font-semibold mb-4">Insight & Opinion</h1>
@@ -52,7 +52,7 @@ const OpinionSection = () => {
             whileInView={(index) => ({
               opacity: 1,
               y: 0,
-              transition: { delay: index * 0.2, duration: 0.6, type: "spring" },
+              transition: { delay: index * 0.2, duration: 1, type: "spring" },
             })}
           >
             {/* Blog Image with Hover Zoom */}

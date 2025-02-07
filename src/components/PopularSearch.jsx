@@ -3,6 +3,14 @@ import { CiLocationOn } from "react-icons/ci";
 import { FaDollarSign } from "react-icons/fa";
 import Slider from "react-slick";
 import House1 from "../assets/section/box-house-10.jpg";
+import House2 from "../assets/section/box-house-11.jpg";
+import House4 from "../assets/section/box-house-13.jpg";
+import House5 from "../assets/section/box-house-14.jpg";
+import House6 from "../assets/section/box-house-15.jpg";
+import House7 from "../assets/section/box-house-16.jpg";
+import House8 from "../assets/section/box-house-17.jpg";
+import House9 from "../assets/section/box-house-18.jpg";
+import House3 from "../assets/section/box-house-19.jpg";
 
 const PopularSearch = () => {
   const propertyCards = [
@@ -14,46 +22,60 @@ const PopularSearch = () => {
       price: 8900,
     },
     {
-      image: House1,
+      image: House2,
       title: "Modern Family Home",
       location: "45 Sunset Blvd, Los Angeles, CA 90026",
       details: "4 Bed 2 Bath 3,200 Sqft",
       price: 12000,
     },
     {
-      image: House1,
+      image: House3,
       title: "Cozy Countryside Cottage",
       location: "78 Greenfield Lane, Vermont, VT 05401",
       details: "2 Bed 1 Bath 1,500 Sqft",
       price: 7500,
     },
     {
-      image: House1,
+      image: House4,
       title: "Luxury Penthouse",
       location: "500 5th Ave, New York, NY 10036",
       details: "5 Bed 4 Bath 5,500 Sqft",
       price: 25000,
     },
     {
-      image: House1,
+      image: House5,
       title: "Luxury Penthouse",
       location: "500 5th Ave, New York, NY 10036",
       details: "5 Bed 4 Bath 5,500 Sqft",
       price: 25000,
     },
     {
-      image: House1,
+      image: House6,
       title: "Luxury Penthouse",
       location: "500 5th Ave, New York, NY 10036",
       details: "5 Bed 4 Bath 5,500 Sqft",
       price: 25000,
     },
     {
-      image: House1,
+      image: House7,
       title: "Luxury Penthouse",
       location: "500 5th Ave, New York, NY 10036",
       details: "5 Bed 4 Bath 5,500 Sqft",
       price: 25000,
+    },
+    {
+      image: House9,
+      title: "Modern Family Home",
+      location: "45 Sunset Blvd, Los Angeles, CA 90026",
+      details: "4 Bed 2 Bath 3,200 Sqft",
+      price: 12000,
+    },
+    {
+      image: House8,
+      title: "Cozy Countryside Cottage",
+      location: "78 Greenfield Lane, Vermont, VT 05401",
+      details: "2 Bed 1 Bath 1,500 Sqft",
+      price: 7500,
     },
   ];
 
@@ -85,7 +107,7 @@ const PopularSearch = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 my-10">
       <div className="text-center mb-4">
         <h1 className="text-5xl font-semibold mb-4">Popular Searches</h1>
         <p className="text-paragraph text-gray-600">

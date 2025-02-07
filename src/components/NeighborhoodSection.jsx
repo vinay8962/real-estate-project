@@ -44,13 +44,32 @@ const NeighborhoodSection = () => {
       },
     ],
   };
+  const splitText = (text) => {
+    return text.split("").map((char, index) => (
+      <motion.span
+        key={index}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: index * 0.03, // Stagger the animation for each letter
+          duration: 0.3,
+        }}
+      >
+        {char}
+      </motion.span>
+    ));
+  };
 
   return (
     <div className="text-center p-4">
       <div className="mb-6">
-        <h1 className="text-5xl font-semibold">Explore The Neighborhoods</h1>
+        <h1 className="text-5xl font-semibold">
+          {splitText("Explore The Neighborhoods")}
+        </h1>
         <p className="text-gray-600 mt-2">
-          Discover beautiful locations and their property options.
+          {splitText(
+            "Discover beautiful locations and their property options."
+          )}
         </p>
       </div>
       <div className="w-full">

@@ -5,6 +5,7 @@ import testimonialOne from "../assets/avatar/testimonials-1.jpg";
 import testimonialTwo from "../assets/avatar/testimonials-2.jpg";
 import testimonialThree from "../assets/avatar/testimonials-3.jpg";
 import testimonialFour from "../assets/avatar/testimonials-4.jpg";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -64,11 +65,29 @@ const Testimonials = () => {
     ],
   };
 
+  const splitText = (text) => {
+    return text.split("").map((char, index) => (
+      <motion.span
+        key={index}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: index * 0.03, // Stagger the animation for each letter
+          duration: 0.3,
+        }}
+      >
+        {char}
+      </motion.span>
+    ));
+  };
+
   return (
     <div className="w-full px-6 py-12">
       {/* Section Header */}
       <div className="text-center mb-12">
-        <h1 className="text-5xl font-bold mb-4">What Our Clients Say</h1>
+        <h1 className="text-5xl font-bold mb-4">
+          {splitText("What Our Clients Say")}
+        </h1>
         <p className="text-gray-600 max-w-3xl mx-auto">
           Hear from our happy clients who found their dream homes with our
           expert services.

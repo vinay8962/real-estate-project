@@ -22,11 +22,11 @@ const splitText = (text) => {
 
 const AppraisalSection = () => {
   return (
-    <div className="w-full relative md:px-32 md:py-20">
+    <div className="w-full  relative hidden md:flex px-2 py-2 md:px-32 md:py-20">
       <img
         src={appraisalImage}
         alt="Appraisal Background"
-        className="w-full h-auto object-cover rounded-3xl"
+        className="w-full h-full object-cover rounded-3xl"
       />
       <div className="absolute top-0 left-36 right-0 bottom-0 flex flex-col justify-center items-start text-center text-white bg-opacity-50 p-8">
         <motion.h1 className="text-5xl font-semibold">
@@ -62,7 +62,7 @@ const AppraisalSection = () => {
         </motion.button>
       </div>
 
-      <motion.div className="absolute bottom-20 right-48">
+      <motion.div className="absolute bottom-20 right-48 hidden md:flex">
         <img src={Person} alt="Person" className="w-full h-full" />
       </motion.div>
     </div>
