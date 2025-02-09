@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import backgroundImage from "../assets/section/section-realty.jpg";
 import CountUp from "react-countup";
+import { motion } from "framer-motion";
 
 const Count = () => {
   const [inView, setInView] = useState(false);
@@ -26,6 +27,22 @@ const Count = () => {
     };
   }, []);
 
+  const splitText = (text) => {
+    return text.split("").map((char, index) => (
+      <motion.span
+        key={index}
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: index * 0.03, // Stagger the animation for each letter
+          duration: 0.3,
+        }}
+      >
+        {char}
+      </motion.span>
+    ));
+  };
+
   return (
     <div className="relative w-full h-auto py-12 px-4 md:px-16">
       <div
@@ -41,7 +58,7 @@ const Count = () => {
       >
         <div className="mb-12">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
-            Market Your Property With Realty
+            {splitText("Market Your Property With Realty")}
           </h1>
           <p className="text-sm md:text-lg text-gray-300">
             No obligation market appraisal for your property today. Our virtual

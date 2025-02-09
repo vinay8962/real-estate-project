@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Logo from "../assets/logo/logo-3.1@2x.png";
 import { IoCallOutline } from "react-icons/io5";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
@@ -45,18 +46,24 @@ const Navbar = () => {
           menuOpen ? "flex" : "hidden"
         }`}
       >
-        <li className="text-lg font-semibold px-5 py-2 hover:text-primary">
-          Home
-        </li>
-        <li className="text-lg font-semibold px-5 py-2 hover:text-primary">
-          List
-        </li>
+        <Link to="/">
+          <li className="text-lg font-semibold px-5 py-2 hover:text-primary">
+            Home
+          </li>
+        </Link>
+        <Link to="/porperty-list">
+          <li className="text-lg font-semibold px-5 py-2 hover:text-primary">
+            List
+          </li>
+        </Link>
         <li className="text-lg font-semibold px-5 py-2 hover:text-primary">
           Pages
         </li>
-        <li className="text-lg font-semibold px-5 py-2 hover:text-primary">
-          Blog
-        </li>
+        <Link to="/blog">
+          <li className="text-lg font-semibold px-5 py-2 hover:text-primary">
+            Blog
+          </li>
+        </Link>
         <li className="text-lg font-semibold px-5 py-2 hover:text-primary">
           Contact
         </li>

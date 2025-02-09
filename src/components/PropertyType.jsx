@@ -40,10 +40,28 @@ const PropertyType = () => {
     },
   };
 
+  const splitText = (text) => {
+    return text.split("").map((char, index) => (
+      <motion.span
+        key={index}
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: index * 0.03, // Stagger the animation for each letter
+          duration: 0.3,
+        }}
+      >
+        {char}
+      </motion.span>
+    ));
+  };
+
   return (
     <div className="w-full bg-white py-20">
       <div className="text-center mb-10">
-        <h1 className="text-5xl font-semibold mb-4">Property Types</h1>
+        <h1 className="text-5xl font-semibold mb-4">
+          {splitText("Property Types")}
+        </h1>
         <p className="text-gray-600">
           Thousands of luxury home enthusiasts just like you visit our website.
         </p>

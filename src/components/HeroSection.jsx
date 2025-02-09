@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import background from "../assets/section/page-title-2.jpg";
 import { IoSearch } from "react-icons/io5";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
+  const [selected, setSelected] = useState("rent");
+
   const Heading = "Your Way Home Starts Here";
   const Text =
     "Thousands of luxury home enthusiasts just like you visit our website.";
@@ -75,12 +77,40 @@ const HeroSection = () => {
 
         {/* Buttons */}
         <div className="flex space-x-4 mb-8">
-          <button className="w-32 h-12 font-bold py-2 px-4 bg-white text-black hover:bg-primary hover:text-white focus:bg-primary focus:text-white rounded-2xl">
+          <motion.button
+            className={`w-32 h-12 font-bold py-2 px-4 ${
+              selected === "rent"
+                ? "bg-primary text-white"
+                : "bg-white text-black hover:bg-primary hover:text-white"
+            } rounded-2xl`}
+            onClick={() => setSelected("rent")}
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 2,
+              type: "spring",
+            }}
+          >
             For Rent
-          </button>
-          <button className="w-32 h-12 font-bold py-2 px-4 bg-white text-black hover:bg-primary hover:text-white focus:bg-primary focus:text-white rounded-2xl">
+          </motion.button>
+
+          <motion.button
+            className={`w-32 h-12 font-bold py-2 px-4 ${
+              selected === "sale"
+                ? "bg-primary text-white"
+                : "bg-white text-black hover:bg-primary hover:text-white"
+            } rounded-2xl`}
+            onClick={() => setSelected("sale")}
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 2,
+              type: "spring",
+            }}
+          >
+            {" "}
             For Sale
-          </button>
+          </motion.button>
         </div>
 
         {/* Search Form */}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { FaDollarSign } from "react-icons/fa";
 import Slider from "react-slick";
@@ -11,8 +11,18 @@ import House7 from "../assets/section/box-house-16.jpg";
 import House8 from "../assets/section/box-house-17.jpg";
 import House9 from "../assets/section/box-house-18.jpg";
 import House3 from "../assets/section/box-house-19.jpg";
+import { motion } from "framer-motion";
 
 const PopularSearch = () => {
+  const [selected, setSelected] = useState("Beachfront Villas");
+
+  const buttons = [
+    "Beachfront Villas",
+    "Mountain Homes",
+    "Urban Apartments",
+    "Countryside Estates",
+    "Luxury Penthouses",
+  ];
   const propertyCards = [
     {
       image: House1,
@@ -106,31 +116,54 @@ const PopularSearch = () => {
     ],
   };
 
+  const splitText = (text) => {
+    return text.split("").map((char, index) => (
+      <motion.span
+        key={index}
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: index * 0.03, // Stagger the animation for each letter
+          duration: 0.3,
+        }}
+      >
+        {char}
+      </motion.span>
+    ));
+  };
+
   return (
     <div className="p-4 my-10">
       <div className="text-center mb-4">
-        <h1 className="text-5xl font-semibold mb-4">Popular Searches</h1>
+        <h1 className="text-5xl font-semibold mb-4">
+          {splitText("Popular Searches")}
+        </h1>
         <p className="text-paragraph text-gray-600">
           Thousands of luxury home enthusiasts just like you visit our website.
         </p>
       </div>
-      <div className="w-full flex justify-center">
-        <div className="grid grid-cols-1 w-3/4 sm:grid-cols-3 md:grid-cols-5 gap-1">
-          <button className="w-9/12 h-12 font-semibold text-Text1 hover:bg-primary text-base hover:text-white hover:font-bold focus:bg-primary focus:text-white focus:font-bold border rounded-xl">
-            Beachfront Villas
-          </button>
-          <button className="w-9/12 h-12 font-semibold text-Text1 hover:bg-primary text-base hover:text-white hover:font-bold focus:bg-primary focus:text-white focus:font-bold border rounded-xl">
-            Mountain Homes
-          </button>
-          <button className="w-9/12 h-12 font-semibold text-Text1 hover:bg-primary text-base hover:text-white hover:font-bold focus:bg-primary focus:text-white focus:font-bold border rounded-xl">
-            Urban Apartments
-          </button>
-          <button className="w-9/12 h-12 font-semibold text-Text1 hover:bg-primary text-base hover:text-white hover:font-bold focus:bg-primary focus:text-white focus:font-bold border rounded-xl">
-            Countryside Estates
-          </button>
-          <button className="w-9/12 h-12 font-semibold text-Text1 hover:bg-primary text-base hover:text-white hover:font-bold focus:bg-primary focus:text-white focus:font-bold border rounded-xl">
-            Luxury Penthouses
-          </button>
+      <div className="w-full flex justify-center mt-10">
+        <div className="grid grid-cols-1 w-3/4 sm:grid-cols-3 md:grid-cols-5 gap-3">
+          {buttons.map((label, index) => (
+            <motion.button
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: index * 0.2,
+                duration: 0.6,
+                type: "spring",
+              }}
+              className={`w-9/12 h-12 font-semibold text-base border rounded-xl ${
+                selected === label
+                  ? "bg-primary text-white font-bold"
+                  : "text-Text1 hover:bg-primary hover:text-white hover:font-bold"
+              }`}
+              onClick={() => setSelected(label)}
+            >
+              {label}
+            </motion.button>
+          ))}
         </div>
       </div>
       <div className="my-4">

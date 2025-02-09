@@ -22,7 +22,7 @@ const splitText = (text) => {
 
 const AppraisalSection = () => {
   return (
-    <div className="w-full  relative hidden md:flex px-2 py-2 md:px-32 md:py-20">
+    <div className="w-full  relative hidden md:flex px-2 py-2 md:px-32 md:py-20  overflow-hidden">
       <img
         src={appraisalImage}
         alt="Appraisal Background"
@@ -63,7 +63,14 @@ const AppraisalSection = () => {
       </div>
 
       <motion.div className="absolute bottom-20 right-48 hidden md:flex">
-        <img src={Person} alt="Person" className="w-full h-full" />
+        <motion.img
+          src={Person}
+          alt="Person"
+          className="w-full h-full"
+          initial={{ opacity: 0, x: 200 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 2 }}
+        />
       </motion.div>
     </div>
   );

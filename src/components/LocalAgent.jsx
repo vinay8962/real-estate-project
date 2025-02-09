@@ -14,12 +14,30 @@ import {
   IoLogoInstagram,
 } from "react-icons/io5";
 
+const splitText = (text) => {
+  return text.split("").map((char, index) => (
+    <motion.span
+      key={index}
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        delay: index * 0.03, // Stagger the animation for each letter
+        duration: 0.3,
+      }}
+    >
+      {char}
+    </motion.span>
+  ));
+};
+
 const LocalAgent = () => {
   return (
     <div className="w-full bg-white py-16">
       {/* Title Section */}
       <div className="text-center mb-10">
-        <h1 className="text-4xl font-semibold mb-4">Choose Your Local Agent</h1>
+        <h1 className="text-4xl font-semibold mb-4">
+          {splitText("Choose Your Local Agent")}
+        </h1>
         <p className="text-gray-500">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel
           lobortis justo.
