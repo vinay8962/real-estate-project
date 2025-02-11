@@ -51,7 +51,7 @@ const Navbar = () => {
             Home
           </li>
         </Link>
-        <Link to="/porperty-list">
+        <Link to="/property-list">
           <li className="text-lg font-semibold px-5 py-2 hover:text-primary">
             List
           </li>

@@ -5,7 +5,7 @@ import Seller from "../assets/avatar/seller.jpg";
 
 const ContactSellers = () => {
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white rounded-2xl shadow-lg">
+    <div className="w-full mx-auto p-6 bg-white  rounded-2xl border">
       <h2 className="text-2xl font-bold mb-6 text-gray-800">Contact Sellers</h2>
 
       {/* Seller Info Section */}
