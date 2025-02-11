@@ -16,15 +16,18 @@ const ImagePropertyDetails = () => {
     PropertyImage5,
     PropertyImage6,
   ];
+
   const imageVariants = {
     hidden: { opacity: 0, scale: 0.9 },
     visible: { opacity: 1, scale: 1 },
   };
 
   const [selectedImage, setSelectedImage] = useState(null);
+
   return (
-    <div>
-      <div className="grid grid-cols-3 gap-4">
+    <div className="p-4">
+      {/* Image Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {images.map((image, index) => (
           <motion.img
             key={index}
@@ -32,8 +35,8 @@ const ImagePropertyDetails = () => {
             alt={`Property ${index + 1}`}
             className={`rounded-xl cursor-pointer ${
               index === 0
-                ? "col-span-2 row-span-2 w-full h-80 object-cover"
-                : "w-full h-40 object-cover"
+                ? "sm:col-span-2 sm:row-span-2 w-full h-64 sm:h-[31rem] object-cover"
+                : "w-full h-40 sm:h-60 object-cover"
             }`}
             initial="hidden"
             whileInView="visible"
@@ -51,18 +54,18 @@ const ImagePropertyDetails = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
-          <div className="relative">
+          <div className="relative max-w-4xl mx-auto p-4">
             <motion.img
               src={selectedImage}
               alt="Fullscreen View"
-              className="max-w-full max-h-full rounded-lg"
+              className="w-full h-auto max-h-[90vh] rounded-lg"
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ type: "spring" }}
             />
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 text-white bg-black bg-opacity-50 p-2 rounded-full"
+              className="absolute top-4 right-4 text-white bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition"
             >
               ✕
             </button>
