@@ -30,20 +30,18 @@ import GetDirection from "../components/GetDirection";
 import FloorPlans from "../components/FloorPlans";
 import LoanCalculator from "../components/LoanCalculator";
 import SimilarProperty from "../components/SimilarProperty";
+import AddReview from "../components/AddReview";
+import ShowReview from "../components/ShowReview";
 
 const PropertyDetails = () => {
-  const PropertyDetails = [
+  const propertyDetailsList = [
     { icon: <CiHome />, label: "ID", value: "2297" },
     { icon: <LuArrowRightLeft />, label: "Type", value: "House" },
     { icon: <PiGarageLight />, label: "Garages", value: "1" },
     { icon: <IoMdBed />, label: "Bedrooms", value: "2 rooms" },
     { icon: <GiBathtub />, label: "Bathrooms", value: "2" },
     { icon: <CiCrop />, label: "Land Size", value: "2,000 SqFt" },
-    {
-      icon: <IoHammerOutline />,
-      label: "Year Built",
-      value: "2024",
-    },
+    { icon: <IoHammerOutline />, label: "Year Built", value: "2024" },
     { icon: <CiRuler />, label: "Size", value: "900 SqFt" },
   ];
 
@@ -124,7 +122,7 @@ const PropertyDetails = () => {
               {/* Property Specifications Section */}
               <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 my-10">
                 {/* Individual property info */}
-                {PropertyDetails.map(({ icon, label, value }, idx) => (
+                {propertyDetailsList.map(({ icon, label, value }, idx) => (
                   <div
                     key={idx}
                     className="flex items-center justify-start  gap-4 md:gap-2 p-2"
@@ -310,6 +308,19 @@ const PropertyDetails = () => {
 
             <div>
               <LoanCalculator />
+            </div>
+            <div className="max-w-6xl mx-auto p-6  shadow-lg rounded-xl">
+              <div className=" gap-8">
+                {/* Left: Show Reviews */}
+                <div className="p-6 ">
+                  <ShowReview />
+                </div>
+                <hr />
+                {/* Right: Add Review */}
+                <div className="p-6 ">
+                  <AddReview />
+                </div>
+              </div>
             </div>
           </div>
 

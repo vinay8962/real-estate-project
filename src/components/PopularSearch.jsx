@@ -12,10 +12,11 @@ import House8 from "../assets/section/box-house-17.jpg";
 import House9 from "../assets/section/box-house-18.jpg";
 import House3 from "../assets/section/box-house-19.jpg";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const PopularSearch = () => {
   const [selected, setSelected] = useState("Beachfront Villas");
-
+  const navigate = useNavigate();
   const buttons = [
     "Beachfront Villas",
     "Mountain Homes",
@@ -192,7 +193,11 @@ const PopularSearch = () => {
                   <h2 className="text-xl font-bold text-primary flex items-center">
                     <FaDollarSign className="mr-1" /> {property.price}
                   </h2>
-                  <button className="w-1/3 h-12 font-semibold text-primary hover:bg-primary text-base hover:text-white hover:font-bold focus:bg-primary focus:text-white focus:font-bold border border-primary rounded-xl">
+
+                  <button
+                    className="w-1/3 h-12 font-semibold text-primary hover:bg-primary text-base hover:text-white hover:font-bold focus:bg-primary focus:text-white focus:font-bold border border-primary rounded-xl"
+                    onClick={() => navigate("/property-details")}
+                  >
                     Details
                   </button>
                 </div>

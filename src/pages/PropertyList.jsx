@@ -4,7 +4,7 @@ import { GrSort } from "react-icons/gr";
 import { BsGrid3X3Gap } from "react-icons/bs";
 import { FaDollarSign, FaListUl } from "react-icons/fa";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import House1 from "../assets/section/box-house-10.jpg";
 import House2 from "../assets/section/box-house-11.jpg";
 import House4 from "../assets/section/box-house-13.jpg";
@@ -19,6 +19,7 @@ import { RxCross1 } from "react-icons/rx";
 
 const PropertyList = () => {
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
+  const navigate = useNavigate();
   const propertyCards = [
     {
       image: House1,
@@ -302,7 +303,10 @@ const PropertyList = () => {
                 <h2 className="text-xl font-bold text-primary flex items-center">
                   <FaDollarSign className="mr-1" /> {property.price}
                 </h2>
-                <button className="w-1/3 h-12 font-semibold text-primary hover:bg-primary text-base hover:text-white hover:font-bold focus:bg-primary focus:text-white focus:font-bold border border-primary rounded-xl">
+                <button
+                  className="w-1/3 h-12 font-semibold text-primary hover:bg-primary text-base hover:text-white hover:font-bold focus:bg-primary focus:text-white focus:font-bold border border-primary rounded-xl"
+                  onClick={() => navigate("/property-details")}
+                >
                   Details
                 </button>
               </div>
