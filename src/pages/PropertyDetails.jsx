@@ -14,15 +14,11 @@ import {
   CiRuler,
 } from "react-icons/ci";
 import { IoArrowDownCircleOutline } from "react-icons/io5";
-
 import { LuArrowRightLeft } from "react-icons/lu";
-
 import { IoHammerOutline } from "react-icons/io5";
-
 import { PiGarageLight } from "react-icons/pi";
 import { IoMdBed } from "react-icons/io";
 import { GiBathtub } from "react-icons/gi";
-
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import { SlPrinter } from "react-icons/sl";
 import { motion } from "framer-motion";

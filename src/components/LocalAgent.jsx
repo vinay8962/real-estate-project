@@ -13,6 +13,7 @@ import {
   IoLogoTwitter,
   IoLogoInstagram,
 } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const splitText = (text) => {
   return text.split("").map((char, index) => (
@@ -107,23 +108,23 @@ const LocalAgent = () => {
             />
             <motion.div
               className="absolute inset-0 flex items-end justify-center bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity"
-              initial={{ y: -100 }}
-              whileHover={{ y: 0 }}
+              initial={{ y: 0, scale: 0 }}
+              whileHover={{ y: 0, scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
               <div className="flex bg-black w-8/12 h-14 mb-10 rounded-xl items-center justify-center gap-4 text-white text-2xl">
-                <a href="#" className="hover:text-primary">
+                <Link href="#" className="hover:text-primary">
                   <IoLogoLinkedin />
-                </a>
-                <a href="#" className="hover:text-primary">
+                </Link>
+                <Link href="#" className="hover:text-primary">
                   <IoLogoFacebook />
-                </a>
-                <a href="#" className="hover:text-primary">
+                </Link>
+                <Link href="#" className="hover:text-primary">
                   <IoLogoTwitter />
-                </a>
-                <a href="#" className="hover:text-primary">
+                </Link>
+                <Link href="#" className="hover:text-primary">
                   <IoLogoInstagram />
-                </a>
+                </Link>
               </div>
             </motion.div>
           </div>

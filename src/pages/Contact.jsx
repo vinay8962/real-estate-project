@@ -45,12 +45,12 @@ const Contact = () => {
           </Marker>
         </MapContainer>
       </div>
-      <div className="max-w-6xl mx-auto h-[600px] flex items-center justify-center bg-white px-8 py-2 rounded-lg shadow-md opacity-100">
+      <div className="max-w-6xl mx-auto my-10 h-[600px] flex items-center justify-center bg-white px-8 py-2 rounded-lg shadow-md opacity-100">
         {/* Contact Heading */}
         <div className="w-full">
           {" "}
           {/* Adjusted the top spacing properly */}
-          <div className="text-center mb-6">
+          <div className="text-start my-6">
             <h1 className="text-4xl font-bold text-gray-800">
               We Would Love to Hear From You
             </h1>
@@ -61,42 +61,49 @@ const Contact = () => {
           </div>
           {/* Contact Form */}
           <form>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-gray-700 font-medium">Name</label>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              <div className="">
+                <label className="block text-gray-700 font-bold my-2">
+                  Name
+                </label>
                 <input
                   type="text"
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full px-6 py-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
                   required
+                  placeholder="Your name"
                 />
               </div>
               <div>
-                <label className="block text-gray-700 font-medium">Email</label>
+                <label className="block text-gray-700 font-bold my-2">
+                  Email
+                </label>
                 <input
                   type="email"
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full px-6 py-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
                   required
+                  placeholder="Email"
                 />
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-4">
               <div>
-                <label className="block text-gray-700 font-medium">
+                <label className="block text-gray-700 font-bold my-2">
                   Phone Number
                 </label>
                 <input
                   type="tel"
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full px-6 py-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
                   required
+                  placeholder="Your phone number"
                 />
               </div>
               <div>
-                <label className="block text-gray-700 font-medium">
+                <label className="block text-gray-700 font-bold my-2">
                   What are you interested in?
                 </label>
                 <select
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full px-6 py-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
                   required
                 >
                   <option value="">Select</option>
@@ -108,20 +115,21 @@ const Contact = () => {
             </div>
 
             <div className="mt-4">
-              <label className="block text-gray-700 font-medium">
+              <label className="block text-gray-700 font-bold my-2">
                 Your Message
               </label>
               <textarea
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full px-6 py-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
                 rows="4"
                 required
+                placeholder="Message"
               ></textarea>
             </div>
 
-            <div className="mt-6 text-center">
+            <div className="mt-6 text-center flex justify-start">
               <button
                 type="submit"
-                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300"
+                className="bg-primary hover:bg-paragraph font-bold text-white px-6 py-2 rounded-lg  transition duration-300"
               >
                 Contact our experts
               </button>

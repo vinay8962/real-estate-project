@@ -3,11 +3,14 @@ import Logo from "../assets/logo/logo-3.1@2x.png";
 import { IoCallOutline } from "react-icons/io5";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { IoIosArrowDown } from "react-icons/io";
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
@@ -56,9 +59,44 @@ const Navbar = () => {
             List
           </li>
         </Link>
-        <li className="text-lg font-semibold px-5 py-2 hover:text-primary">
-          Pages
-        </li>
+        <div
+          className="relative"
+          onMouseEnter={() => setIsOpen(true)}
+          onMouseLeave={() => setIsOpen(false)}
+        >
+          <li className="flex items-center gap-2 text-lg font-semibold px-5 py-2 hover:text-primary cursor-pointer">
+            Pages
+            <motion.span
+              animate={{ rotate: isOpen ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <IoIosArrowDown />
+            </motion.span>
+          </li>
+
+          {isOpen && (
+            <motion.ul
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
+              className="absolute left-0  w-56 bg-white shadow-lg rounded-lg overflow-hidden"
+            >
+              <li className="px-4 py-2 hover:text-primary">
+                <Link to="/agents">Agent List</Link>
+              </li>
+              <li className="px-4 py-2 hover:text-primary">
+                <Link to="/career">Career</Link>
+              </li>
+              <li className="px-4 py-2 hover:text-primary">
+                <Link to="/faqs">FAQs</Link>
+              </li>
+              <li className="px-4 py-2 hover:text-primary">
+                <Link to="/home-loan">Home Loan Process</Link>
+              </li>
+            </motion.ul>
+          )}
+        </div>
         <Link to="/blog">
           <li className="text-lg font-semibold px-5 py-2 hover:text-primary">
             Blog
