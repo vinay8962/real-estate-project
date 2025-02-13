@@ -64,9 +64,11 @@ const Navbar = () => {
             Blog
           </li>
         </Link>
-        <li className="text-lg font-semibold px-5 py-2 hover:text-primary">
-          Contact
-        </li>
+        <Link to="/contact">
+          <li className="text-lg font-semibold px-5 py-2 hover:text-primary">
+            Contact
+          </li>
+        </Link>
       </ul>
 
       {/* Contact Section */}

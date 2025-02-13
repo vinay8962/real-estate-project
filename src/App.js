@@ -5,6 +5,8 @@ import Footer from "./components/Footer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import LoadingSpinner from "./components/LoadingSpinner"; // A simple spinner
+import Agents from "./pages/Agents";
+import Contact from "./pages/Contact";
 
 // Lazy loaded pages
 const Home = lazy(() => import("./pages/Home"));
@@ -24,6 +26,8 @@ const App = () => {
             <Route path="/blog" element={<Blog />} />
             <Route path="/property-list" element={<PropertyList />} />
             <Route path="/property-details" element={<PropertyDetails />} />
+            <Route path="/agents" element={<Agents />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
 
           <Footer />
