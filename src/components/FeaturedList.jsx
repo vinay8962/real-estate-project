@@ -40,7 +40,7 @@ const FeaturedList = () => {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto my-12 px-4 border rounded-2xl py-6">
+    <div className="max-w-6xl mx-auto my-12 md:px-4 border rounded-2xl py-6">
       <h1 className="text-3xl font-semibold mb-6 text-start text-gray-800">
         Featured Listings
       </h1>

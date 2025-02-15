@@ -15,6 +15,7 @@ import { motion } from "framer-motion";
 import FeaturedList from "../components/FeaturedList";
 import { CiLocationArrow1, CiLocationOn, CiMail } from "react-icons/ci";
 import { FaLocationPin } from "react-icons/fa6";
+import Listing from "../components/Listing";
 
 const AgentDetails = () => {
   return (
@@ -31,13 +32,13 @@ const AgentDetails = () => {
           </p>
         </div>
 
-        <div className=" mx-auto p-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-10">
+        <div className=" mx-auto p-1 md:p-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-4">
             {/* Left Side - Agent Details */}
-            <div className="md:col-span-2 h-auto bg-white p-6 rounded-xl shadow-lg">
-              <div className="flex flex-col md:flex-row gap-6 min-h-[450px]">
+            <div className="md:col-span-2 w-full h-auto  md:px-6 py-0 ">
+              <div className="flex flex-col md:flex-row gap-6 min-h-[450px] bg-white shadow-xl py-1 px-2 md:py-10 md:px-6 rounded-2xl">
                 {/* Agent Image */}
-                <div className="w-full md:w-1/2 overflow-hidden rounded-xl relative group h-[300px] md:h-[450px] flex-shrink-0">
+                <div className="w-full md:w-2/5 overflow-hidden  rounded-xl relative group h-[300px] md:h-[450px] flex-shrink-0">
                   <motion.img
                     whileHover={{ scale: 1.1, duration: 0.3 }}
                     src={Agent1}
@@ -78,10 +79,14 @@ const AgentDetails = () => {
 
                   <div className="border-b pb-8 mb-8">
                     <p className="text-gray-700 flex items-center gap-2 my-1">
-                      <IoCallOutline /> +7-445-556-8337
+                      <IoCallOutline />{" "}
+                      <span className="font-bold text-primary text-lg">
+                        +7-445-556-8337
+                      </span>
                     </p>
                     <p className="text-gray-700 flex items-center gap-2 my-1">
-                      <CiMail /> demmy12@gmail.com
+                      <CiMail />
+                      <span className="font-bold"> demmy12@gmail.com</span>
                     </p>
                     <p className="text-gray-700 flex items-center gap-2 my-1">
                       <CiLocationOn /> 1901 Thornridge Cir. Shiloh, Hawaii 81063
@@ -106,17 +111,21 @@ const AgentDetails = () => {
                 </div>
               </div>
 
-              <div>{/* Listing */}</div>
+              <div>
+                <Listing />
+              </div>
             </div>
 
             {/* Right Side - Contact Form & Featured Listings */}
             <div className="md:col-span-1 space-y-8">
-              {/* Contact Form */}
-              <AgentContactForm />
+              <div className="sticky top-10 space-y-8">
+                {/* Contact Form */}
+                <AgentContactForm />
 
-              {/* Featured Listings */}
+                {/* Featured Listings */}
 
-              <FeaturedList />
+                <FeaturedList />
+              </div>
             </div>
           </div>
         </div>
