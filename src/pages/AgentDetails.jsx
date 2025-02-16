@@ -13,8 +13,7 @@ import {
 import { IoIosArrowForward } from "react-icons/io";
 import { motion } from "framer-motion";
 import FeaturedList from "../components/FeaturedList";
-import { CiLocationArrow1, CiLocationOn, CiMail } from "react-icons/ci";
-import { FaLocationPin } from "react-icons/fa6";
+import { CiLocationOn, CiMail } from "react-icons/ci";
 import Listing from "../components/Listing";
 
 const AgentDetails = () => {

@@ -9,6 +9,7 @@ import Agents from "./pages/Agents";
 import Contact from "./pages/Contact";
 import AgentDetails from "./pages/AgentDetails";
 import Faqs from "./pages/Faqs";
+import Career from "./pages/Career";
 
 // Lazy loaded pages
 const Home = lazy(() => import("./pages/Home"));
@@ -32,6 +33,7 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/agents-details" element={<AgentDetails />} />
             <Route path="/faqs" element={<Faqs />} />
+            <Route path="/career" element={<Career />} />
           </Routes>
 
           <Footer />

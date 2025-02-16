@@ -22,6 +22,7 @@ import AgentImage9 from "../assets/section/agent-item-9.jpg";
 import AgentImage10 from "../assets/section/agent-item-10.jpg";
 import AgentImage11 from "../assets/section/agent-item-11.jpg";
 import AgentImage12 from "../assets/section/agent-item-12.jpg";
+import AgentCard from "../components/AgentCard";
 
 const Agents = () => {
   const navigate = useNavigate();
@@ -98,59 +99,8 @@ const Agents = () => {
 
         {/* Agent Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10 px-4 md:px-8">
-          {agentData.map((agent, index) => (
-            <motion.div
-              key={index}
-              className="bg-white p-2 transition-shadow group"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.5 }}
-            >
-              <div
-                className="w-full h-96 overflow-hidden rounded-xl mb-4 relative group"
-                onClick={() => navigate("/agents-details")}
-              >
-                <motion.img
-                  whileHover={{ scale: 1.1, duration: 0.3 }}
-                  src={agent.image}
-                  alt={agent.name}
-                  className="w-full h-full object-cover"
-                />
-                <motion.div
-                  className="absolute inset-0 flex items-end justify-center bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity"
-                  initial={{ y: 0 }}
-                  whileHover={{ y: 0 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                >
-                  <div className="flex bg-black w-8/12 h-14 mb-10 rounded-xl items-center justify-center gap-4 text-white text-2xl">
-                    <Link href="#" className="hover:text-primary">
-                      <IoLogoLinkedin />
-                    </Link>
-                    <Link href="#" className="hover:text-primary">
-                      <IoLogoFacebook />
-                    </Link>
-                    <Link href="#" className="hover:text-primary">
-                      <IoLogoTwitter />
-                    </Link>
-                    <Link href="#" className="hover:text-primary">
-                      <IoLogoInstagram />
-                    </Link>
-                  </div>
-                </motion.div>
-              </div>
-              <div className="flex justify-between items-center">
-                <div>
-                  <h2 className="text-xl font-semibold mb-1 group-hover:text-primary transition-colors">
-                    {agent.name}
-                  </h2>
-                  <p className="text-gray-500">{agent.position}</p>
-                </div>
-                <div className="flex gap-4 text-lg">
-                  <IoMdCall className="cursor-pointer" />
-                  <GrMail className="cursor-pointer" />
-                </div>
-              </div>
-            </motion.div>
+          {agentData.map((agent) => (
+            <AgentCard key={agent.id} agent={agent} />
           ))}
         </div>
 
