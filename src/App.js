@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import AgentDetails from "./pages/AgentDetails";
 import Faqs from "./pages/Faqs";
 import Career from "./pages/Career";
+import BlogDetails from "./pages/BlogDetails";
 
 // Lazy loaded pages
 const Home = lazy(() => import("./pages/Home"));
@@ -34,6 +35,7 @@ const App = () => {
             <Route path="/agents-details" element={<AgentDetails />} />
             <Route path="/faqs" element={<Faqs />} />
             <Route path="/career" element={<Career />} />
+            <Route path="/blog-details" element={<BlogDetails />} />
           </Routes>
 
           <Footer />

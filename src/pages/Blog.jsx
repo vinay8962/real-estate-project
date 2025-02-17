@@ -19,63 +19,63 @@ const Blog = () => {
       date: "26 August, 2024",
       title: "Building gains into housing stocks and how to trade them",
       category: "Real Estate",
-      link: "#",
+      link: "/blog-details",
     },
     {
       img: blogTwo,
       date: "14 September, 2024",
       title: "The future of luxury homes: What you need to know",
       category: "Luxury Market",
-      link: "#",
+      link: "/blog-details",
     },
     {
       img: blogThree,
       date: "3 October, 2024",
       title: "Investment strategies for high-value real estate",
       category: "Investment Tips",
-      link: "#",
+      link: "/blog-details",
     },
     {
       img: blogTwo,
       date: "15 November, 2024",
       title: "Tips for first-time home buyers in today's market",
       category: "Buying Guide",
-      link: "#",
+      link: "/blog-details",
     },
     {
       img: blogThree,
       date: "22 December, 2024",
       title: "Understanding the impact of interest rates on real estate",
       category: "Finance",
-      link: "#",
+      link: "/blog-details",
     },
     {
       img: blogOne,
       date: "5 January, 2025",
       title: "Eco-friendly homes: A guide to sustainable living",
       category: "Green Living",
-      link: "#",
+      link: "/blog-details",
     },
     {
       img: blogTwo,
       date: "15 November, 2024",
       title: "Tips for first-time home buyers in today's market",
       category: "Buying Guide",
-      link: "#",
+      link: "/blog-details",
     },
     {
       img: blogThree,
       date: "22 December, 2024",
       title: "Understanding the impact of interest rates on real estate",
       category: "Finance",
-      link: "#",
+      link: "/blog-details",
     },
     {
       img: blogOne,
       date: "5 January, 2025",
       title: "Eco-friendly homes: A guide to sustainable living",
       category: "Green Living",
-      link: "#",
+      link: "/blog-details",
     },
   ];
 
@@ -160,12 +160,12 @@ const Blog = () => {
                 <h2 className="text-2xl font-bold mb-4 hover:text-primary">
                   {blog.title}
                 </h2>
-                <a
-                  href={blog.link}
-                  className="text-primary font-medium hover:underline flex items-center gap-2 font-bold"
+                <Link
+                  to={blog.link}
+                  className="text-primary hover:underline flex items-center gap-2 font-bold"
                 >
                   Read more <IoArrowForwardCircleOutline size={25} />
-                </a>
+                </Link>
               </div>
             </motion.div>
           ))}

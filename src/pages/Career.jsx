@@ -9,8 +9,8 @@ import sectionBenefitsTwo from "../assets/section/section-benefits-2.jpg";
 import { GiHeartPlus } from "react-icons/gi";
 import { LiaPiggyBankSolid } from "react-icons/lia";
 import { MdFamilyRestroom } from "react-icons/md";
-import person3 from "../assets/section/person-3.png";
-import avatar18 from "../assets/avatar/avt-png18.png";
+// import person3 from "../assets/section/person-3.png";
+// import avatar18 from "../assets/avatar/avt-png18.png";
 
 const Career = () => {
   // Updated Job List with Different Job Titles
@@ -181,18 +181,18 @@ const Career = () => {
 
       {/*  */}
 
-      <div className="w-full flex flex-col md:flex-row items-center gap-10 px-6 md:px-20 py-20">
-        {/* Left: Text Content */}
-        <div className="w-full md:w-1/2 flex flex-col gap-6 text-center md:text-left">
-          <h1 className="text-3xl font-bold text-gray-800">
+      {/* <div className="w-full flex flex-col md:flex-row items-center gap-10 px-6 md:px-20 py-20"> */}
+      {/* Left: Text Content */}
+      {/* <div className="w-full md:w-1/2 flex flex-col gap-6 text-center md:text-left">
+          <h1 className="text-4xl font-bold text-gray-800">
             Reviews from employees working at Proty
           </h1>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-lg text-paragraph leading-relaxed">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
             sollicitudin ipsum ullamcorper, pulvinar ipsum in, imperdiet ante.
             In feugiat tortor semper nibh rhoncus volutpat.
           </p>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-lg text-paragraph leading-relaxed">
             Proin pharetra rhoncus maximus. Sed est dolor, consectetur eu
             sagittis.
           </p>
@@ -201,19 +201,23 @@ const Career = () => {
               More stories
             </button>
           </div>
-        </div>
+        </div> */}
 
-        {/* Right: Testimonial Section */}
-        <div className="w-full md:w-1/2 flex flex-col items-center gap-6 relative">
-          {/* Background Circle */}
-          <div className="absolute top-10 left-10 w-11/12 h-full bg-[#6bf9ddc4] rounded-full opacity-50 -z-10"></div>
+      {/* Right: Testimonial Section */}
+      {/* <div className="w-full md:w-1/2 flex flex-col items-center gap-6 relative"> */}
+      {/* Background Circle */}
+      {/* <div className="absolute top-10 left-1/2 transform -translate-x-1/2 w-4/5 h-96 bg-[#6bf9dd7d] rounded-full opacity-50 -z-10"></div> */}
 
-          {/* Person Image */}
-          <div className="relative">
-            <img src={person3} alt="Person" className="object-cover" />
+      {/* Person Image */}
+      {/* <div className="relative w-full flex justify-center">
+            <img
+              src={person3}
+              alt="Person"
+              className="object-cover w-40 md:w-48 lg:w-9/12 "
+            /> */}
 
-            {/* Right Side Star Ratings */}
-            <div className="absolute top-3 right-[-15%] md:right-[-10%] w-28 bg-white shadow-xl flex justify-center items-center h-8 rounded-xl">
+      {/* Right Side Star Ratings */}
+      {/* <div className="absolute top-3 right-0 md:right-[-5%] w-24 bg-white shadow-xl flex justify-center items-center h-8 rounded-xl">
               <div className="flex text-yellow-500 gap-1">
                 <FaStar />
                 <FaStar />
@@ -222,59 +226,67 @@ const Career = () => {
                 <FaStar />
               </div>
             </div>
-          </div>
+          </div> */}
 
-          {/* Floating Profile Card */}
-          <div className="absolute bottom-[75%] left-10 bg-white rounded-xl shadow-2xl flex items-center gap-3 w-44 h-20 p-3">
-            {/* Avatar Image */}
-            <img
+      {/* Floating Profile Card */}
+      {/* <div className="absolute top-[-10%] left-5 md:left-10 bg-white rounded-xl shadow-2xl flex items-center gap-3 w-40 md:w-44 h-16 md:h-20 p-2 md:p-3"> */}
+      {/* Avatar Image */}
+      {/* <img
               src={avatar18}
               alt="Cody Fisher"
-              className="w-12 h-12 rounded-full object-cover"
-            />
-            {/* Text Content */}
-            <div className="flex flex-col justify-center">
-              <h2 className="font-semibold text-gray-800">Cody Fisher</h2>
-              <p className="text-sm font-medium text-gray-600">CEO, Real</p>
+              className="w-10 md:w-12 h-10 md:h-12 rounded-full object-cover"
+            /> */}
+      {/* Text Content */}
+      {/* <div className="flex flex-col justify-center">
+              <h2 className="text-sm md:text-base font-semibold text-gray-800">
+                Cody Fisher
+              </h2>
+              <p className="text-xs md:text-sm font-medium text-gray-600">
+                CEO, Real
+              </p>
             </div>
-          </div>
+          </div> */}
 
-          {/* Testimonial Content */}
-          <div className="absolute bottom-[-10%] left-40 bg-white rounded-xl shadow-lg p-6 flex flex-col gap-4 max-w-md">
-            {/* Star Ratings */}
-            <div className="flex text-yellow-500 gap-1">
+      {/* Testimonial Content */}
+      {/* <div className="relative bg-white rounded-xl shadow-lg p-4 md:p-6 flex flex-col items-start gap-3 max-w-sm md:max-w-md text-center"> */}
+      {/* Star Ratings */}
+      {/* <div className="flex justify-center text-yellow-500 gap-1">
               <FaStar />
               <FaStar />
               <FaStar />
               <FaStar />
               <FaStar />
-            </div>
+            </div> */}
 
-            {/* Testimonial Text */}
-            <p className="text-gray-700 leading-relaxed">
+      {/* Testimonial Text */}
+      {/* <p className="text-gray-700 text-sm md:text-base leading-relaxed text-start">
               Vivamus at nisl ornare, vulputate turpis finibus, posuere metus.
               Donec in placerat felis. Praesent ante tellus, dignissim nec
               imperdiet ac.
-            </p>
+            </p> */}
 
-            {/* Profile Section */}
-            <div className="flex items-center gap-3 w-44 h-20 p-3">
-              {/* Avatar Image */}
-              <img
+      {/* Profile Section */}
+      {/* <div className="flex items-center justify-center gap-3"> */}
+      {/* Avatar Image */}
+      {/* <img
                 src={avatar18}
                 alt="Cody Fisher"
-                className="w-12 h-12 rounded-full object-cover"
-              />
+                className="w-10 md:w-12 h-10 md:h-12 rounded-full object-cover"
+              /> */}
 
-              {/* Text Content */}
-              <div className="flex flex-col justify-center">
-                <h2 className="font-semibold text-gray-800">Cody Fisher</h2>
-                <p className="text-sm font-medium text-gray-600">CEO, Real</p>
+      {/* Text Content */}
+      {/* <div className="flex flex-col text-center">
+                <h2 className="text-sm md:text-base font-semibold text-gray-800">
+                  Cody Fisher
+                </h2>
+                <p className="text-xs md:text-sm font-medium text-gray-600">
+                  CEO, Real
+                </p>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
 
       {/* Call to Action */}
       <CTASection />
